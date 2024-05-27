@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import GlobalStyles from './GlobalStyles';
-import HomePage from './HomePage';
-import AboutPage from './AboutPage';
-import ContactPage from './ContactPage';
+import GlobalStyles from './styles/GlobalStyles';
+import HomePage from './components/HomePage';
+import AboutPage from './components/AboutPage';
+import ContactPage from './components/ContactPage';
 
 const App = () => (
   <Router>
