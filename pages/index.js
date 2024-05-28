@@ -1,19 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import GlobalStyles from './styles/GlobalStyles';
-import HomePage from './components/HomePage';
-import AboutPage from './components/AboutPage';
-import ContactPage from './components/ContactPage';
+import { Layout } from 'antd';
+import { Element as ScrollElement } from 'react-scroll';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import AboutMe from './components/AboutMe';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
+import './styles.css';
+
+const { Header, Content, Footer } = Layout;
 
 const App = () => (
-  <Router>
-    <GlobalStyles />
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/about" component={AboutPage} />
-      <Route path="/contact" component={ContactPage} />
-    </Switch>
-  </Router>
+  <Layout>
+    <Header>
+      <Navbar />
+    </Header>
+    <Content>
+      <ScrollElement name="home"><Home /></ScrollElement>
+      <ScrollElement name="about"><AboutMe /></ScrollElement>
+      <ScrollElement name="portfolio"><Portfolio /></ScrollElement>
+      <ScrollElement name="contact"><Contact /></ScrollElement>
+    </Content>
+    <Footer>
+      Social Media Links Here
+    </Footer>
+  </Layout>
 );
 
 export default App;
